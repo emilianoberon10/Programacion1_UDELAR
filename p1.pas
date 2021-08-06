@@ -1,15 +1,10 @@
 Program HelloWorld;
-var a,b,c,d,x,y,z : integer;
-Begin
-
-readln (x,y,z);
-readln (a);
-readln (b,c);
-read (d) ;
-
-writeln(x,y,z);
-writeln(a);
-writeln(b,c);
-writeln(d);
-
+VAR a, b, c, d : char;
+    r1, r2, resu : real;
+BEGIN
+   read (a, b, c, d);
+   r1 := ord(a) - ord('0');
+   r2 := (ord(c) - ord('0')) * 10 + (ord(d) - ord('0'));
+   resu := r1 + r2 / 100;
+   write ('Valor ingresado: ', resu:4:2);
 End.
