@@ -1,10 +1,17 @@
 Program HelloWorld;
-VAR a, b, c, d : char;
-    r1, r2, resu : real;
+VAR
+a, b : INTEGER;
+c, d : Real;
 BEGIN
-   read (a, b, c, d);
-   r1 := ord(a) - ord('0');
-   r2 := (ord(c) - ord('0')) * 10 + (ord(d) - ord('0'));
-   resu := r1 + r2 / 100;
-   write ('Valor ingresado: ', resu:4:2);
+{  read(a,b,c,d);}
+  a:= 5;
+  b:= a+3;
+  c:= b DIV a;
+  d := (b+2.0)/a;
+  d := d +9;
+  Writeln((8+9)/2);
+  Writeln((8+9) DIV 2);
+  Writeln(round((8+9)/2));
+  Writeln(abs((8+9)/2));
+
 End.
