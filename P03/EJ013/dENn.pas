@@ -2,41 +2,40 @@ PROGRAM Busca_Si_Aparece;
 VAR
   d,n: INTEGER;
 VAR
-  count: STRING;
+  mil,cen,dec,uni: BOOLEAN;
 BEGIN
 
 Write('Ingrese un entero de 4 digitos: ');
 Read(n);
 Write('Ingrese un entero de 1 digito: ');
 Read(d);
-{
-WriteLn(n DIV 1000);
-WriteLn((n DIV 100) MOD 10);
-WriteLn((n MOD 100) DIV 10);
-WriteLn(n MOD 10);
-}
-IF (n DIV 1000)=d THEN
-  count := 'x'
+
+mil := (n DIV 1000) = d;
+cen := ((n DIV 100) MOD 10) = d;
+dec := ((n MOD 100) DIV 10) = d;
+uni := (n MOD 10) = d;
+
+WriteLn(n:4);
+IF mil OR cen OR dec OR uni THEN
+BEGIN
+  IF mil THEN
+    Write('x')
+  ELSE
+    Write(' ');
+  IF cen THEN
+    Write('x')
+  ELSE
+    Write(' ');
+  IF dec THEN
+    Write('x')
+  ELSE
+    Write(' ');
+  IF uni THEn
+    Write('x')
+  ELSE
+    Write(' ');
+END
 ELSE
-  count := ' ';
-
-
-IF ((n DIV 100) MOD 10)=d THEN
-  count := count + 'x'
-ELSE
-  count := count + ' ';
-
-IF ((n MOD 100) DIV 10)=d THEN
-  count := count + 'x'
-ELSE
-  count := count + ' ';
-
-IF (n MOD 10)=d THEN
-  count := count + 'x'
-ELSE
-  count := count + ' ';
-
-WriteLn(n);
-WriteLn(count);
+  WriteLn('No hay coincidencias.');
 
 END.
