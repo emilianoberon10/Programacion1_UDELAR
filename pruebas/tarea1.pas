@@ -16,8 +16,7 @@ Type
 
 Var 
   precondicion : Boolean;
-  sumaIzquierda, base: Real;
-  alturas : Arr;
+  sumaIzquierda, altura, base: Real;
   i : Integer;
 
 Begin
@@ -26,8 +25,8 @@ Begin
 
   If precondicion Then
     Begin
-      alturas[0] := izq;
-      sumaIzquierda := f(alturas[0]);
+      altura := izq;
+      sumaIzquierda := f(altura);
       // concidero el caso que n=1
       If subintervalos = 1 Then
         Begin
@@ -39,8 +38,8 @@ Begin
           // Inicio el intervalo en 2 ya que el caso n=1 esta conciderado
           For i:= 1 To (subintervalos -1) Do
             Begin
-              alturas[i] := alturas[(i-1)] + base;
-              sumaIzquierda := sumaIzquierda + f(alturas[i]);
+              altura := altura + base;
+              sumaIzquierda := sumaIzquierda + f(altura);
             End;
           sumaIzquierda := sumaIzquierda * base;
           sumaRiemann := sumaIzquierda
