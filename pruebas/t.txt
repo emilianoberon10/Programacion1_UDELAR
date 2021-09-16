@@ -1,0 +1,9 @@
+
+  -5 5 1
+  i = 9 
+    => delta=0.9815
+  -5 5 2
+  i = 7
+    => delta=1.6938
+  delta = sumaRiemann(i) + sumaRiemann(i-1) | en este caso suma porque sumaRiemann siempre (-)
+  devuelvo el i donde pasa sumaRiemann(i) + sumaRiemann(i-1) < del
